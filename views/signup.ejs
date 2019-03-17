@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Developer Students' Club - NSEC</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/mdb.min.css" rel="stylesheet">
+  <link rel="icon" href="https://cdn-images-1.medium.com/max/1600/1*a1Sy9bAOy6vZzILhvhSYjA.png" sizes="16x16" type="image/png">
+  <link href="/css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+      background-color: #1c2331;
+    }
+
+    .btn-outline-info {
+    border: 2px solid #3F51B1!important;
+    background-color: transparent!important;
+    color: #3F51B1!important;
+    border-radius: 25px;
+}
+
+.btn-outline-info.active, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:focus, .btn-outline-info:hover {
+    border-color: #4285f4!important;
+    background-color: transparent!important;
+    color: #4285f4!important;
+}
+.btn-outline-info:not([disabled]):not(.disabled).active, .btn-outline-info:not([disabled]):not(.disabled):active, .show>.btn-outline-info.dropdown-toggle {
+    background-color: transparent!important;
+    border-color: #4285f4!important;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 0rem!important;
+}
+
+.light-blue-text {
+    color: #3F51B1!important;
+    background-color: transparent!important;
+}
+.info-color {
+    background-color: #3F51B1!important;
+}
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" target="_blank">
+        <strong>DSC &middot; NSEC</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+      
+        <ul class="navbar-nav mr-auto">
+           <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Register
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Login</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Full Page Intro -->
+  <div class="view full-page-intro" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <!-- Content -->
+      <div class="container">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn" style="display: flex; justify-content: space-around;">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 white-text text-center text-md-left" style="padding: 5%;">
+
+            <img src="https://cdn-images-1.medium.com/max/1600/1*a1Sy9bAOy6vZzILhvhSYjA.png" style="max-height: 350px;">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mb-4">
+
+            <!-- <div class="card" style="background: transparent;">
+              <div class="card-body" style="display: flex; justify-content: center;">
+                <img src="https://cdn-images-1.medium.com/max/1600/1*a1Sy9bAOy6vZzILhvhSYjA.png" style="max-height: 300px;">
+              </div>
+            </div> -->
+
+            
+            <div class="card" style="color: #3F51B1;">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Register</strong>
+    </h5>
+<% if(hasErrors) { %>
+                <div class="alert alert-danger text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <% _.forEach(messages, function(error){ %>
+                        <%= error %><br>
+                    <% }) %>
+                </div>
+            <% } %>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;" action="/signup" method="post">
+
+            <div class="form-row">
+                <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" name="firstName">
+                        <label for="materialRegisterFormFirstName">First name</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control" name="lastName">
+                        <label for="materialRegisterFormLastName">Last name</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Username -->
+            <div class="md-form mt-0">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" name="username">
+                <label for="materialRegisterFormEmail">Username</label>
+            </div>
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+                <input type="email" id="materialRegisterFormEmail" class="form-control" name="email">
+                <label for="materialRegisterFormEmail">E-mail</label>
+            </div>
+
+            <!-- Password -->
+            <div class="md-form">
+                <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password">
+                <label for="materialRegisterFormPassword">Password</label>
+            </div>
+
+            <!-- Sign up button -->
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign Up</button>
+
+            <!-- Social register -->
+            <p>or sign up with:</p>
+
+                <a href="/auth/google" class="light-blue-text mx-2">
+                    <i class="fab fa-google"></i>
+                </a>
+<!--                 <a href="#" class="light-blue-text mx-2">
+                    <i class="fab fa-github"></i>
+                </a> -->
+                <a href="/auth/facebook" class="light-blue-text mx-2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+<!-- Material form register -->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+      <!-- Content -->
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+  </div>
+  
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      Designed By 
+      <a href="https://ianiket.me">ANiKET</a>
+      © 2019 Copyright:
+      <a href="#" target="_blank"> DSC - NSEC </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>

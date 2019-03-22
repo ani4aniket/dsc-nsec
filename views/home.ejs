@@ -3,25 +3,23 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="https://cdn-images-1.medium.com/max/1600/1*a1Sy9bAOy6vZzILhvhSYjA.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="https://cdn-images-1.medium.com/max/1600/1*a1Sy9bAOy6vZzILhvhSYjA.png" sizes="16x16"
+    type="image/png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Dashboard
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
-  <style>
-      .md-form input.form-control[type="datetime-local"] ~ label {
-      transform: translateY(-140%);
-      font-size: .8rem;
-      }
-  </style>
+
 </head>
 
 <body class="">
@@ -62,7 +60,8 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">User Profile</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -98,13 +97,15 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control" name="username" value="<%= currentUser.username %>" disabled>
+                          <input type="text" class="form-control" name="username" value="<%= currentUser.username %>"
+                            disabled>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control" name="email" value="<%= currentUser.email %>" disabled>
+                          <input type="email" class="form-control" name="email" value="<%= currentUser.email %>"
+                            disabled>
                         </div>
                       </div>
                     </div>
@@ -112,13 +113,15 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">First Name</label>
-                          <input type="text" class="form-control" name="firstName" value="<%= currentUser.firstName %>" disabled>
+                          <input type="text" class="form-control" name="firstName" value="<%= currentUser.firstName %>"
+                            disabled>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control" name="lastName" value="<%= currentUser.lastName %>" disabled>
+                          <input type="text" class="form-control" name="lastName" value="<%= currentUser.lastName %>"
+                            disabled>
                         </div>
                       </div>
                     </div>
@@ -130,46 +133,59 @@
                         </div>
                       </div>
                     </div>
+                    <!--Grid row-->
+                    <div class="row mt-4">
+
+                      <!--Grid column-->
+                      <div class="col-lg-4 col-md-12 mb-4">
+
+                        <label for="department">Department</label>
+                        <select class="custom-select d-block w-100" id="dept" required>
+                          <option value="">Choose...</option>
+                          <option>CSE</option>
+                          <option>IT</option>
+                          <option>ECE</option>
+                          <option>EE</option>
+                        </select>
+
+
+                      </div>
+                      <!--Grid column-->
+
+                      <!--Grid column-->
+                      <div class="col-lg-4 col-md-6 mb-4">
+
+                        <label for="graduation-year">Graduation Year</label>
+                        <select class="custom-select d-block w-100" id="graduation-year" required>
+                          <option value="">Choose...</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                          <option>2022</option>
+                        </select>
+
+
+                      </div>
+                      <!--Grid column-->
+
+                      <!--Grid column-->
+                      <div class="col-lg-4 col-md-6 mb-4">
+
+                        <label for="student-id">College ID</label>
+                        <input type="text" class="form-control" id="student-id" placeholder="" required>
+
+
+                      </div>
+                      <!--Grid column-->
+
+
+
+                    </div>
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Stream</label>
-                          <input type="text" class="form-control" name="stream" value="<%= currentUser.stream %>">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Year</label>
-                          <input type="text" class="form-control" name="year" value="<%= currentUser.year %>">
-<!--                               <select class="browser-default custom-select" name="year">
-                                <option selected>Year</option>
-                                <option value="1st">1st</option>
-                                <option value="2nd">2nd</option>
-                                <option value="3rd">3rd</option>
-                                <option value="4th">4th</option>
-                              </select> -->
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">College ID</label>
-                          <input type="text" class="form-control" name="studentid" value="<%= currentUser.studentid %>">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <input type="datetime-local" id=" inputMDEx" class="form-control datepicker">
-                          <label for="inputMDEx">Date of Birth</label>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <select class="mdb-select md-form">
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                          </select>
+                            <label class="bmd-label-floating">Date of Birth</label>
+                            <input type="text" class="form-control" name="dob" >
                         </div>
                       </div>
                     </div>
@@ -179,7 +195,8 @@
                           <label>About Me</label>
                           <div class="form-group">
                             <label class="bmd-label-floating"></label>
-                            <textarea class="form-control" rows="5" name="about" placeholder="write something that describes you... "><%= currentUser.about %></textarea>
+                            <textarea class="form-control" rows="5" name="about"
+                              placeholder="write something that describes you... "><%= currentUser.about %></textarea>
                           </div>
                         </div>
                       </div>
@@ -202,22 +219,24 @@
                   </div>
                   <div class="modal-body mx-3">
                     <div class="md-form mb-5">
-                      
+
                       <blockquote class="blockquote">
-                      <p class="mb-0">How do you think receiving a free premium DataCamp account help you?</p>
+                        <p class="mb-0">How do you think receiving a free premium DataCamp account help you?</p>
                       </blockquote>
                       <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
                     </div>
                     <div class="md-form mb-5">
                       <blockquote class="blockquote bq-primary">
-                      <p>Describe in detail how you would allocate time for studying on DataCamp in your daily routine.</p>
+                        <p>Describe in detail how you would allocate time for studying on DataCamp in your daily
+                          routine.</p>
                       </blockquote>
                       <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
                     </div>
 
-                    <div class="md-form mb-4">  
+                    <div class="md-form mb-4">
                       <blockquote class="blockquote bq-primary">
-                      <p>Which career track are you most interested in? How do you imagine yourself after 5 years in that career?</p>
+                        <p>Which career track are you most interested in? How do you imagine yourself after 5 years in
+                          that career?</p>
                       </blockquote>
                       <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
                     </div>
@@ -248,15 +267,17 @@
                     </p>
                   </blockquote>
                   <% if(!currentUser.active) { %>
-                    <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalRegisterForm">Apply</a>
-                <% } else { %>
-                    <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round disabled" data-toggle="modal" data-target="#modalRegisterForm" >Applied</a>
-                <% } %>
-<!--                 <div class="text-center">
+                  <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round" data-toggle="modal"
+                    data-target="#modalRegisterForm">Apply</a>
+                  <% } else { %>
+                  <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round disabled" data-toggle="modal"
+                    data-target="#modalRegisterForm">Applied</a>
+                  <% } %>
+                  <!--                 <div class="text-center">
                   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Launch
                     Modal Register Form</a>
                 </div> -->
-                  
+
                 </div>
               </div>
             </div>
@@ -340,8 +361,13 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $('.datepicker').pickadate({
+      format: 'd mmmm, yyyy'
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $().ready(function () {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -361,7 +387,7 @@
 
         }
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
@@ -372,7 +398,7 @@
           }
         });
 
-        $('.fixed-plugin .active-color span').click(function() {
+        $('.fixed-plugin .active-color span').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).siblings().removeClass('active');
@@ -393,7 +419,7 @@
           }
         });
 
-        $('.fixed-plugin .background-color .badge').click(function() {
+        $('.fixed-plugin .background-color .badge').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -404,7 +430,7 @@
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
@@ -414,7 +440,7 @@
           var new_image = $(this).find("img").attr('src');
 
           if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.fadeOut('fast', function () {
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $sidebar_img_container.fadeIn('fast');
             });
@@ -423,7 +449,7 @@
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
             var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-            $full_page_background.fadeOut('fast', function() {
+            $full_page_background.fadeOut('fast', function () {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
               $full_page_background.fadeIn('fast');
             });
@@ -442,7 +468,7 @@
           }
         });
 
-        $('.switch-sidebar-image input').change(function() {
+        $('.switch-sidebar-image input').change(function () {
           $full_page_background = $('.full-page-background');
 
           $input = $(this);
@@ -474,7 +500,7 @@
           }
         });
 
-        $('.switch-sidebar-mini input').change(function() {
+        $('.switch-sidebar-mini input').change(function () {
           $body = $('body');
 
           $input = $(this);
@@ -489,7 +515,7 @@
 
             $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').addClass('sidebar-mini');
 
               md.misc.sidebar_mini_active = true;
@@ -497,12 +523,12 @@
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
 
@@ -511,17 +537,17 @@
     });
   </script>
   <script>
-      $('.datepicker').pickadate({
+    $('.datepicker').pickadate({
       // Escape any “rule” characters with an exclamation mark (!).
       format: 'You selecte!d: dddd, dd mmm, yyyy',
       formatSubmit: 'yyyy/mm/dd',
       hiddenPrefix: 'prefix__',
       hiddenSuffix: '__suffix'
-      });
-      // Material Select Initialization
-$(document).ready(function() {
-$('.mdb-select').materialSelect();
-});
+    });
+    // Material Select Initialization
+    $(document).ready(function () {
+      $('.mdb-select').materialSelect();
+    });
   </script>
 </body>
 

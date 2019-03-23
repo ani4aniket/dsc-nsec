@@ -87,8 +87,16 @@
             <a class="nav-link" href="https://www.facebook.com/dscnsec" >Contact</a>
           </li>
         </ul>
-
-        <!-- Right -->
+        <% if(currentUser) { %>
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link" href="/signin"><%= currentUser.username %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+        <% } else { %>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
             <a class="nav-link" href="/signin">Login</a>
@@ -97,12 +105,13 @@
             <a class="nav-link" href="/signup">Register</a>
           </li>
         </ul>
+        <% } %>
 
       </div>
 
     </div>
   </nav>
-  <!-- Navbar -->
+  
 
   <!-- Full Page Intro -->
   <div class="view full-page-intro" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'); background-repeat: no-repeat; background-size: cover;">
@@ -229,7 +238,7 @@
 
             <!-- Main heading -->
             <h3 class="h3 mb-3">What is DSC?</h3>
-            <p>A Developer Students Club is a Google recogznied student body at a college which directly reports to Google for their activities and is supported by the tech giant.</p>
+            <p>A Developer Students Club is a Google recognized student body at a college which directly reports to Google for their activities and is supported by the tech giant.</p>
             <p>A DSC conducts workshops, seminars and other fun activities which help the students connect with Google.</p>
             <!-- Main heading -->
 

@@ -164,13 +164,13 @@
     <h5 class="card-header info-color white-text text-center py-4">
         <strong>Register</strong>
     </h5>
-<% if(hasErrors) { %>
-                <div class="alert alert-danger text-center">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+           <% if(hasErrors) { %>
                     <% _.forEach(messages, function(error){ %>
+                        <div class="alert alert-danger text-center">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <%= error %><br>
+                        </div>
                     <% }) %>
-                </div>
             <% } %>
 
     <!--Card content-->
@@ -197,7 +197,7 @@
             </div>
             <!-- Username -->
             <div class="md-form mt-0">
-                <input type="text" id="materialRegisterFormEmail" class="form-control" name="username">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" name="username" minlength="6" maxlength="25">
                 <label for="materialRegisterFormEmail">Username</label>
             </div>
             <!-- E-mail -->

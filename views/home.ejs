@@ -129,7 +129,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">College</label>
-                          <input type="text" class="form-control" name="college" value="<%= currentUser.college %>">
+                          <input type="text" class="form-control" name="college" value="<%= currentUser.college %>" required>
                         </div>
                       </div>
                     </div>
@@ -282,24 +282,24 @@
                             <div class="md-form mb-5">
 
                               <blockquote class="blockquote">
-                                <p class="mb-0">How do you think receiving a free premium DataCamp account help you?</p>
+                                <p class="mb-0">How do you think receiving a free premium DataCamp account help you? (In 200-1000 words)</p>
                               </blockquote>
-                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesOne"></textarea>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesOne" minlength="200" maxlength="1000" required></textarea>
                             </div>
                             <div class="md-form mb-5">
                               <blockquote class="blockquote bq-primary">
                                 <p>Describe in detail how you would allocate time for studying on DataCamp in your daily
-                                  routine.</p>
+                                  routine.(In 200-1000 words)</p>
                               </blockquote>
-                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesTwo"></textarea>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesTwo" minlength="200" maxlength="1000" required></textarea>
                             </div>
 
                             <div class="md-form mb-4">
                               <blockquote class="blockquote bq-primary">
                                 <p>Which career track are you most interested in? How do you imagine yourself after 5 years in
-                                  that career?</p>
+                                  that career?(In 200-1000 words)</p>
                               </blockquote>
-                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesThree"></textarea>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesThree" minlength="200" maxlength="1000" required></textarea>
                             </div>
 
                           </div>

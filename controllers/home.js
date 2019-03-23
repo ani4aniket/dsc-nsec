@@ -3,7 +3,7 @@ module.exports = function(){
 	return {
 		SetRouting: function(router){
 			router.post('/update/:id', this.updateProfile);
-			router.get('/verify/:id', this.verifyEmail);
+			router.post('/verify/:id', this.verifyEmail);
 		},
         
         updateProfile: function(req, res){
@@ -12,12 +12,12 @@ module.exports = function(){
 				_id:id
 			}).then((user) => {
 				user.college = req.body.college;
-				user.username = req.body.username;
-				user.firstName = req.body.firstName;
-				user.lastName = req.body.lastName;
 				user.studentid = req.body.studentid;
-				user.year = req.body.year;
 				user.stream = req.body.stream;
+				user.dob = req.body.dob;
+				user.graduationYear = req.body.graduationYear;
+				user.github = req.body.github;
+				user.linkedin = req.body.linkedin;
 				user.about = req.body.about;
 
 				user.save();
@@ -30,6 +30,9 @@ module.exports = function(){
 			User.findOne({
 				_id:id
 			}).then((user) => {
+				user.quesOne = req.body.quesOne;
+				user.quesTwo = req.body.quesTwo;
+				user.quesThree = req.body.quesThree;
 				user.active = true;
 
 				user.save();

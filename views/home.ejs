@@ -133,19 +133,24 @@
                         </div>
                       </div>
                     </div>
+
                     <!--Grid row-->
                     <div class="row mt-4">
 
                       <!--Grid column-->
                       <div class="col-lg-4 col-md-12 mb-4">
 
-                        <label for="department">Department</label>
-                        <select class="custom-select d-block w-100" id="dept" required>
-                          <option value="">Choose...</option>
-                          <option>CSE</option>
-                          <option>IT</option>
-                          <option>ECE</option>
-                          <option>EE</option>
+                        <label for="department">Stream</label>
+                        <select class="custom-select d-block w-100" id="stream" name="stream"  required>
+                          <option value="<%= currentUser.stream %>"><%= currentUser.stream %></option>
+                          <option value="CSE">CSE</option>
+                          <option value="IT">IT</option>
+                          <option value="ECE">ECE</option>
+                          <option value="EE">EE</option>
+                          <option value="ME">ME</option>
+                          <option value="CE">CE</option>
+                          <option value="AIEE">AIEE</option>
+                          <option value="Other">Other</option>
                         </select>
 
 
@@ -156,12 +161,12 @@
                       <div class="col-lg-4 col-md-6 mb-4">
 
                         <label for="graduation-year">Graduation Year</label>
-                        <select class="custom-select d-block w-100" id="graduation-year" required>
-                          <option value="">Choose...</option>
-                          <option>2019</option>
-                          <option>2020</option>
-                          <option>2021</option>
-                          <option>2022</option>
+                        <select class="custom-select d-block w-100" id="graduation-year" name="graduationYear" value="<%= currentUser.graduationYear %>" required>
+                          <option value="<%= currentUser.graduationYear %>"><%= currentUser.graduationYear %></option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
                         </select>
 
 
@@ -169,10 +174,11 @@
                       <!--Grid column-->
 
                       <!--Grid column-->
+
                       <div class="col-lg-4 col-md-6 mb-4">
 
                         <label for="student-id">College ID</label>
-                        <input type="text" class="form-control" id="student-id" placeholder="" required>
+                        <input type="text" class="form-control" id="student-id" placeholder="" name="studentid" value="<%= currentUser.studentid %>" required>
 
 
                       </div>
@@ -181,11 +187,26 @@
 
 
                     </div>
+
                     <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-6">
                         <div class="form-group">
-                            <label class="bmd-label-floating">Date of Birth</label>
-                            <input type="text" class="form-control" name="dob" >
+                            <label class="bmd-label-floating">Github Profile Link</label>
+                            <input type="text" class="form-control" name="github" value="<%= currentUser.github %>" required>
+                        </div>
+                      </div>
+                       <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">LinkedIn Profile Link</label>
+                            <input type="text" class="form-control" name="linkedin" value="<%= currentUser.linkedin %>" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Date of Birth (DD/MM/YYYY)</label>
+                            <input type="text" class="form-control" name="dob" value="<%= currentUser.dob %>" required>
                         </div>
                       </div>
                     </div>
@@ -207,47 +228,7 @@
                 </div>
               </div>
             </div>
-            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header text-center">
-                    <!-- <h4 class="modal-title w-100 font-weight-bold">Sign up</h4> -->
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-
-                      <blockquote class="blockquote">
-                        <p class="mb-0">How do you think receiving a free premium DataCamp account help you?</p>
-                      </blockquote>
-                      <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
-                    </div>
-                    <div class="md-form mb-5">
-                      <blockquote class="blockquote bq-primary">
-                        <p>Describe in detail how you would allocate time for studying on DataCamp in your daily
-                          routine.</p>
-                      </blockquote>
-                      <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
-                    </div>
-
-                    <div class="md-form mb-4">
-                      <blockquote class="blockquote bq-primary">
-                        <p>Which career track are you most interested in? How do you imagine yourself after 5 years in
-                          that career?</p>
-                      </blockquote>
-                      <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
-                    </div>
-
-                  </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-primary">Enroll</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-avatar">
@@ -267,12 +248,14 @@
                     </p>
                   </blockquote>
                   <% if(!currentUser.active) { %>
-                  <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round" data-toggle="modal"
+                  <a href="" class="btn btn-primary btn-round" data-toggle="modal"
                     data-target="#modalRegisterForm">Apply</a>
                   <% } else { %>
-                  <a href="/verify/<%= currentUser.id %>" class="btn btn-primary btn-round disabled" data-toggle="modal"
+                  <a href="" class="btn btn-primary btn-round disabled" data-toggle="modal"
                     data-target="#modalRegisterForm">Applied</a>
                   <% } %>
+
+                  
                   <!--                 <div class="text-center">
                   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Launch
                     Modal Register Form</a>
@@ -284,6 +267,49 @@
           </div>
         </div>
       </div>
+      <form action="/verify/<%= currentUser.id %>" method="post">
+                            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header text-center">
+                            <!-- <h4 class="modal-title w-100 font-weight-bold">Sign up</h4> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+
+                              <blockquote class="blockquote">
+                                <p class="mb-0">How do you think receiving a free premium DataCamp account help you?</p>
+                              </blockquote>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesOne"></textarea>
+                            </div>
+                            <div class="md-form mb-5">
+                              <blockquote class="blockquote bq-primary">
+                                <p>Describe in detail how you would allocate time for studying on DataCamp in your daily
+                                  routine.</p>
+                              </blockquote>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesTwo"></textarea>
+                            </div>
+
+                            <div class="md-form mb-4">
+                              <blockquote class="blockquote bq-primary">
+                                <p>Which career track are you most interested in? How do you imagine yourself after 5 years in
+                                  that career?</p>
+                              </blockquote>
+                              <textarea id="form7" class="md-textarea form-control" rows="3" name="quesThree"></textarea>
+                            </div>
+
+                          </div>
+                          <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">

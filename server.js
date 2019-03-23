@@ -15,15 +15,16 @@ const container = require('./container');
 container.resolve(function(users, _, home){
     
     mongoose.Promise = global.Promise;
-    mongoose.connect("mongodb://localhost:27017/dscnsec", { useNewUrlParser: true });
+    mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/dscnsec", { useNewUrlParser: true });
    
     const app = SetupExpress();
     
     function SetupExpress(){
         const app = express();
+        const port = process.env.PORT || 3000;
         const server = http.createServer(app);
-        server.listen(3000, function(){
-           console.log('Listening on port 3000') ;
+        server.listen(port, function(){
+           console.log(`Listening on port ${port}`) ;
         });
         
         ConfigureExpress(app);
